@@ -8,8 +8,6 @@ C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\ChatAppT
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\ChatAppTest.runtimeconfig.dev.json
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\ChatAppTest.dll
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\ChatAppTest.pdb
-C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll

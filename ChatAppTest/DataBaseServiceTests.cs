@@ -1,5 +1,5 @@
-using System;
-using System.DirectoryServices.ActiveDirectory;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using ChatApp.Commons;
 using ChatApp.Models;
 using NUnit.Framework;
@@ -9,8 +9,8 @@ namespace ChatAppTest
 {
     public static class DataBaseServiceTests
     {
-        private const string Login = "test";
-        private const string Password = "test";
+        private const string Login = "loginTest";
+        private const string Password = "passwordTest";
         private const string Firstname = "test";
         private const string Lastname = "test";
         private const string Content = "test";
@@ -160,7 +160,6 @@ namespace ChatAppTest
         [Test]
         public static void ShouldNotAuthorizeNonExistingUser()
         {
-            AddUser(Login, Password, Firstname, Lastname);
             var result = GetUser(Login, Password);
             Assert.IsFalse(result.Success);
             Assert.AreEqual(Errors.AuthError(), (string)result.Value);
@@ -202,10 +201,13 @@ namespace ChatAppTest
         {
             var result = AddMessage(Content, Login);
             Assert.IsTrue(result.Success);
+            var id = (int)result.Value;
             
             result = AddMessage(Content, Login);
             Assert.IsFalse(result.Success);
             Assert.AreEqual(Errors.DuplicateMessageError(), (string)result.Value);
+
+            DeleteMessage(id);
         }
 
         [Test]
@@ -213,7 +215,7 @@ namespace ChatAppTest
         {
             var result = GetAllMessages();
             Assert.IsTrue(result.Success);
-            Assert.IsInstanceOf(typeof(List), result.Value);
+            Assert.IsInstanceOf(typeof(List<Messages>), result.Value);
         }
 
         #endregion

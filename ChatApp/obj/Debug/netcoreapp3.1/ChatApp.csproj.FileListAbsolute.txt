@@ -55,5 +55,3 @@ C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\runtimes\win
 C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
