@@ -1,0 +1,1 @@
+Scaffold-DbContext "Server=(LocalDb)\MSSQLLocalDB;Database=chat;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
