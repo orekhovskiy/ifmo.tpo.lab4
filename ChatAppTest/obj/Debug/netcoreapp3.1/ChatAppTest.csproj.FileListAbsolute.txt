@@ -132,3 +132,4 @@ C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppT
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.dll
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.pdb
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.genruntimeconfig.cache
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\EntityFrameworkCore.Triggers.dll

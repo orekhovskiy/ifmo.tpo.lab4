@@ -12,5 +12,5 @@ create table [Messages]
     id int primary key identity(1,1),
     login nvarchar(15) not null,
     content text not null, 
-    timeSend date not null
+    timeSend datetime not null
 );

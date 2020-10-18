@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+txamPPui+Y/kWvaAjVTMqpNo9ajTHvPj8p/+AfHz4skmxKjDWoG2ZuZ8vVrebs63dpeKJeWKuMvcZyZaXDpfg==",
+  "dgSpecHash": "fj5FbZO2AueJV+dEEBw9QbfJZ66uXOOPnfTrLwgEeb47053roj9pOS1s5ATuKBnbU+bk4hLbCBgszCVrk19JyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatAppTest\\ChatAppTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anton\\.nuget\\packages\\entityframeworkcore.triggers\\1.2.2\\entityframeworkcore.triggers.1.2.2.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",

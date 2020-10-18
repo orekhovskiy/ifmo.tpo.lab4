@@ -17,6 +17,17 @@
           "ChatAppTest.dll": {}
         }
       },
+      "EntityFrameworkCore.Triggers/1.2.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.9"
+        },
+        "runtime": {
+          "lib/netstandard2.1/EntityFrameworkCore.Triggers.dll": {
+            "assemblyVersion": "1.2.2.0",
+            "fileVersion": "1.2.2.0"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -1407,6 +1418,7 @@
       },
       "ChatApp/1.0.0": {
         "dependencies": {
+          "EntityFrameworkCore.Triggers": "1.2.2",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
         },
@@ -1421,6 +1433,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EntityFrameworkCore.Triggers/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d5aVzdfOHbYm+sgSiOC+GvgrX+XgfaUuvRtXrMqkoMFBwnwO+Zp9/8FAL27TWhDK67F/o3mIv1YarS9jClshNQ==",
+      "path": "entityframeworkcore.triggers/1.2.2",
+      "hashPath": "entityframeworkcore.triggers.1.2.2.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",

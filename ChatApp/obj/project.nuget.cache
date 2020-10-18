@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gvxkc4hZTu4+iIwOLlR4Hlgh0JvK0bVaZ7HW7SOxRZQ204hYjtWaC4EgtpaU8ntf/TvkpG/Ow79/DiB4eiQ0AA==",
+  "dgSpecHash": "EiUMxlX0ClDQsXB6OWaS7bOfgvAx0CEUMR6w/M4ULC+83jQHaq1KUU/B7abN3X9yUFqe6Kmlh1hao0cQnoRU0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anton\\.nuget\\packages\\entityframeworkcore.triggers\\1.2.2\\entityframeworkcore.triggers.1.2.2.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

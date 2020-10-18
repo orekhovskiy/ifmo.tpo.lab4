@@ -7,8 +7,8 @@ namespace ChatApp.Models
     {
         public Messages(string content, string login)
         {
-            Content = content;
             Login = login;
+            Content = content;
             TimeSend = DateTime.Now;
         }
 
