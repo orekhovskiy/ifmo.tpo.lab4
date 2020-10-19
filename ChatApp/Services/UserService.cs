@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChatApp.Services
+﻿namespace ChatApp.Services
 {
     public static class UserService
     {

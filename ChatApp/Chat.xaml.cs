@@ -27,6 +27,7 @@ namespace ChatApp
         public Chat()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             CurrentLogin.Text = UserService.GetLogin();
             ScrollViewer.ScrollToEnd();
 

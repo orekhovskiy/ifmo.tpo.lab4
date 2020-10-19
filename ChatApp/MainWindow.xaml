@@ -20,6 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock 
+            AutomationProperties.AutomationId="MainWindowTitle"
             Grid.Row="0" 
             Grid.Column="0"
             FontSize="40" 
@@ -41,6 +42,7 @@
                 Text="Login"/>
             <TextBox 
                 x:Name="Login"
+                AutomationProperties.AutomationId="MainWindowLoginTextBox"
                 FontSize="30"
                 Height="40"
                 Width="400"
@@ -60,6 +62,7 @@
                 Text="Password"/>
             <PasswordBox 
                 x:Name="Password"
+                AutomationProperties.AutomationId="MainWindowPasswordPasswordBox"
                 FontSize="30"
                 Height="40"
                 Width="400"
@@ -70,6 +73,7 @@
 
 
         <Button 
+            AutomationProperties.AutomationId="MainWindowLoginButton"
             Grid.Row="3"
             Grid.Column="1"
             Width="150"
@@ -83,6 +87,7 @@
         </Button>
 
         <Button 
+            AutomationProperties.AutomationId="MainWindowRegisterButton"
             Grid.Row="3"
             Grid.Column="0"
             Width="150"

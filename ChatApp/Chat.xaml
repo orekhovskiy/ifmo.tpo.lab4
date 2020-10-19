@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp"
         mc:Ignorable="d"
-        Title="Chat" Height="450" Width="800">
+        Title="Chat" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
         <Button
+            AutomationProperties.AutomationId="ChatWindowRefreshButton"
             Grid.Row="0"
             HorizontalAlignment="Left"
             Width="50"
@@ -34,6 +35,7 @@
 
             <TextBlock
                 x:Name="CurrentLogin"
+                AutomationProperties.AutomationId="ChatWindowCurrentLoginTextBlock"
                 FontSize="20"
                 Margin="10 0"
                 Foreground="DodgerBlue"/>
@@ -41,9 +43,12 @@
 
         <ScrollViewer
             x:Name="ScrollViewer"
+            AutomationProperties.AutomationId="Wrapper"
             Grid.Row="1"
             CanContentScroll="True">
-            <ListBox x:Name="Messages">
+            <ListBox 
+                x:Name="Messages"
+                AutomationProperties.AutomationId="ChatWindowMessagesListBox">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -92,19 +97,17 @@
             </Grid.ColumnDefinitions>
 
             <TextBox
+                AutomationProperties.AutomationId="ChatWindowMessageTextBox"
                 x:Name="Message"
                 Grid.Column="0"
-                FontSize="15">
-
-            </TextBox>
+                FontSize="15"/>
 
             <Button
+                AutomationProperties.AutomationId="ChatWindowSendMessageButton"
                 Grid.Column="1"
                 FontSize="30"
                 Content="Send"
-                Click="SendMessage">
-
-            </Button>
+                Click="SendMessage"/>
         </Grid>
     </Grid>
 </Window>

@@ -127,9 +127,14 @@ C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\ChatApp.
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.csprojAssemblyReference.cache
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.AssemblyInfoInputs.cache
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.AssemblyInfo.cs
-C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.csproj.CoreCompileInputs.cache
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.csproj.CopyComplete
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.dll
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.pdb
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.genruntimeconfig.cache
 C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\EntityFrameworkCore.Triggers.dll
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\Appium.Net.dll
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.dll
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\bin\Debug\netcoreapp3.1\WebDriver.dll
+C:\Users\anton\source\repos\ChatApp\ChatAppTest\obj\Debug\netcoreapp3.1\ChatAppTest.csproj.CoreCompileInputs.cache

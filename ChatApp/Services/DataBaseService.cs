@@ -21,7 +21,6 @@ namespace ChatApp.Services
             if (login.Length > 15) return new Result(false, Errors.LongLoginError());
             if (login.Length < 6) return new Result(false, Errors.ShortLoginError());
             if (!regex.IsMatch(login)) return new Result(false, Errors.InvalidLoginError());
-            if (db.User.Any(u => u.Login == login)) return new Result(false, Errors.DuplicateLoginError());
 
             if (password.Length > 15) return new Result(false, Errors.LongPasswordError());
             if (password.Length < 6) return new Result(false, Errors.ShortPasswordError());
@@ -33,6 +32,9 @@ namespace ChatApp.Services
             if (lastname.Length > 30) return new Result(false, Errors.LongLastnameError());
             if (lastname.Length == 0) return new Result(false, Errors.EmptyLastnameError());
             if (!regex.IsMatch(lastname)) return new Result(false, Errors.InvalidLastnameError());
+
+            if (db.User.Any(u => u.Login == login)) return new Result(false, Errors.DuplicateLoginError());
+
             try
             {
                 var user = new User(login, password, firstname, lastname);
