@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace ChatApp.Models
 {
-    public partial class Messages
+    public class Messages
     {
         public Messages(string content, string login)
         {

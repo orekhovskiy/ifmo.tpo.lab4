@@ -1,28 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ChatApp.Models;
 using ChatApp.Services;
+using Microsoft.AspNetCore.SignalR.Client;
+using Newtonsoft.Json;
 
 namespace ChatApp
 {
-    /// <summary>
-    /// Логика взаимодействия для Chat.xaml
-    /// </summary>
     public partial class Chat : Window
     {
-        private ObservableCollection<Messages> _messages;
+        private readonly ObservableCollection<ViewMessage> _messages;
+        private HubConnection _connection;
 
         public Chat()
         {
@@ -31,45 +22,85 @@ namespace ChatApp
             CurrentLogin.Text = UserService.GetLogin();
             ScrollViewer.ScrollToEnd();
 
-            _messages = new ObservableCollection<Messages>();
+            _messages = new ObservableCollection<ViewMessage>();
             Messages.ItemsSource = _messages;
 
-            UpdateMessages();
+            StartConnection();
         }
 
-        private void SendMessage(object sender, RoutedEventArgs e)
+        private async void StartConnection()
         {
-            var content = Message.Text;
-            var login = UserService.GetLogin();
+            _connection = new HubConnectionBuilder()
+                .WithUrl(UrlService.GetHubUrl())
+                .Build();
 
-            var sendMessageResult = DataBaseService.AddMessage(content, login);
-            if (sendMessageResult.Success)
+            _connection.Closed += async (error) =>
             {
-                Message.Text = "";
-                UpdateMessages();
+                await Task.Delay(new Random().Next(0, 5) * 1000);
+                await _connection.StartAsync();
+            };
+
+            _connection.On<List<object>>("UpdateMessages", (messages) =>
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    _messages.Clear();
+                    foreach (var message in messages)
+                    {
+                        var deserializedMessage = JsonConvert.DeserializeObject<Messages>(message.ToString());
+                        var daySent = deserializedMessage.TimeSend.Date.Equals(DateTime.Today.Date) 
+                            ? "today" 
+                            : deserializedMessage.TimeSend.ToShortDateString();
+                        var viewMessage = new ViewMessage(
+                            deserializedMessage.Content,
+                            deserializedMessage.Login,
+                            daySent);
+                        _messages.Add(viewMessage);
+                    }
+                });
+            });
+
+            _connection.On<string>("ReceiveError", (error) =>
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    var text = error;
+                    var caption = "Send message fault";
+                    var button = MessageBoxButton.OK;
+                    MessageBox.Show(text, caption, button);
+                });
+            });
+
+            try
+            {
+                await _connection.StartAsync();
+                await _connection.InvokeAsync("GetAllMessages");
             }
-            else
+            catch (Exception ex)
             {
-                var text = (string) sendMessageResult.Value;
-                var caption = "Send message fault";
+                var text = ex.Message;
+                var caption = "Connection fault";
                 var button = MessageBoxButton.OK;
                 MessageBox.Show(text, caption, button);
             }
         }
 
-        private void Refresh(object sender, RoutedEventArgs e)
+        private async void SendMessage(object sender, RoutedEventArgs e)
         {
-            UpdateMessages();
+            var content = Message.Text;
+            var login = UserService.GetLogin();
+
+            await _connection.InvokeAsync("PostMessage", content, login);
+
+            Message.Text = "";
         }
 
-        private void UpdateMessages()
+        private void LogOut(object sender, RoutedEventArgs e)
         {
-            _messages.Clear();
-            var messagesList = (List<Messages>)DataBaseService.GetAllMessages().Value;
-            foreach (var message in messagesList)
-            {
-                _messages.Add(message);
-            }
+            UserService.SetLogin("");
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

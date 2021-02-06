@@ -5,41 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp"
         mc:Ignorable="d"
-        Title="Chat" Height="450" Width="800" ResizeMode="NoResize">
+        Style="{StaticResource Window}"
+         Title="Chat">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button
-            AutomationProperties.AutomationId="ChatWindowRefreshButton"
-            Grid.Row="0"
-            HorizontalAlignment="Left"
-            Width="50"
-            Margin="5"
-            Content="Refresh"
-            Click="Refresh">
-
-        </Button>
-
         <!--Login info-->
-        <StackPanel
-            Grid.Row="0"
-            Orientation="Horizontal"
-            HorizontalAlignment="Right">
-            <TextBlock
-                FontSize="20"
-                Text="You are logged in as"/>
+        <Grid
+            Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock
-                x:Name="CurrentLogin"
-                AutomationProperties.AutomationId="ChatWindowCurrentLoginTextBlock"
-                FontSize="20"
-                Margin="10 0"
-                Foreground="DodgerBlue"/>
-        </StackPanel>
+            <Border Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="DarkBlue" 
+                    BorderThickness="0 0 0 1" Background="{x:Null}"/>
+
+            <StackPanel 
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                Orientation="Horizontal">
+                <TextBlock
+                    FontSize="20"
+                    Text="You are logged in as"/>
+
+                <TextBlock
+                    x:Name="CurrentLogin"
+                    AutomationProperties.AutomationId="ChatWindowCurrentLoginTextBlock"
+                    FontSize="20"
+                    Margin="10 0"
+                    Foreground="DarkBlue"/>
+            </StackPanel>
+
+            <StackPanel 
+                Grid.Column="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right">
+                <Button 
+                    AutomationProperties.AutomationId="ChatWindowLogoutButton"
+                    Style="{StaticResource ChangeWindowBtn}"
+                    Width="100"
+                    Height="30"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    FontSize="18"
+                    Content="logout"
+                    Margin="20 2"
+                    Click="LogOut"/>
+            </StackPanel>
+        </Grid>
 
         <ScrollViewer
             x:Name="ScrollViewer"
@@ -48,7 +66,9 @@
             CanContentScroll="True">
             <ListBox 
                 x:Name="Messages"
-                AutomationProperties.AutomationId="ChatWindowMessagesListBox">
+                AutomationProperties.AutomationId="ChatWindowMessagesListBox"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                Style="{StaticResource ListBox}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -61,25 +81,27 @@
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
 
+                            <Border Grid.Column="0" Grid.RowSpan="2" BorderBrush="DarkBlue" 
+                                    Padding="5" BorderThickness="1" Background="{x:Null}"/>
+
                             <TextBlock 
+                                Style="{StaticResource Login}"
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                FontSize="10"
                                 VerticalAlignment="Bottom"
                                 Text="{Binding Path=Login}"/>
                             <TextBlock 
+                                Style="{StaticResource DaySent}"
                                 Grid.Row="1"
                                 Grid.Column="0"
-                                Foreground="Gray"
-                                FontSize="10"
-                                Text="{Binding Path=TimeSend}"/>
-
+                                Text="{Binding Path=DaySent}"/>
                             <TextBlock 
+                                Style="{StaticResource Content}"
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Grid.RowSpan="2"
                                 FontSize="25"
-                                VerticalAlignment="Top"
+                                VerticalAlignment="Center"
                                 Margin="5"
                                 Text="{Binding Path=Content}"/>
                         </Grid>
@@ -98,14 +120,18 @@
 
             <TextBox
                 AutomationProperties.AutomationId="ChatWindowMessageTextBox"
+                Style="{StaticResource TextBox}"
+                Width="auto"
+                Height="auto"
                 x:Name="Message"
-                Grid.Column="0"
-                FontSize="15"/>
+                Grid.Column="0"/>
 
             <Button
                 AutomationProperties.AutomationId="ChatWindowSendMessageButton"
+                Style="{StaticResource ChangeWindowBtn}"
+                Width="auto"
+                Height="auto"
                 Grid.Column="1"
-                FontSize="30"
                 Content="Send"
                 Click="SendMessage"/>
         </Grid>

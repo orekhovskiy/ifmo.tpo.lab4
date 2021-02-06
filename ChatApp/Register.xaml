@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800"  ResizeMode="NoResize">
+        Style="{StaticResource Window}"
+         Title="Register">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -47,9 +48,7 @@
             <TextBox 
                 x:Name="Login"
                 AutomationProperties.AutomationId="RegisterWindowLoginTextBox"
-                FontSize="30"
-                Height="40"
-                Width="400"
+                Style="{StaticResource TextBox}"
                 VerticalAlignment="Center"/>
         </StackPanel>
 
@@ -68,9 +67,7 @@
             <PasswordBox 
                 x:Name="Password"
                 AutomationProperties.AutomationId="RegisterWindowPasswordPasswordBox"
-                FontSize="30"
-                Height="40"
-                Width="400"
+                Style="{StaticResource PasswordBox}"
                 VerticalAlignment="Center"/>
         </StackPanel>
 
@@ -89,9 +86,7 @@
             <TextBox 
                 x:Name="Firstname"
                 AutomationProperties.AutomationId="RegisterWindowFirstnameTextBox"
-                FontSize="30"
-                Height="40"
-                Width="400"
+                Style="{StaticResource TextBox}"
                 VerticalAlignment="Center"/>
         </StackPanel>
 
@@ -110,36 +105,30 @@
             <TextBox 
                 x:Name="Lastname"
                 AutomationProperties.AutomationId="RegisterWindowLastnameTextBox"
-                FontSize="30"
-                Height="40"
-                Width="400"
+                Style="{StaticResource TextBox}"
                 VerticalAlignment="Center"/>
         </StackPanel>
 
         <Button 
             AutomationProperties.AutomationId="RegisterWindowRegisterButton"
+            Style="{StaticResource ChangeWindowBtn}"
             Grid.Row="5"
             Grid.Column="1"
-            Width="150"
-            Height=" 50"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             Margin="90 20"
-            FontSize="30"
             Content="register"
             Click="Signup">
         </Button>
 
         <Button 
             AutomationProperties.AutomationId="RegisterWindowLoginButton"
+            Style="{StaticResource ChangeWindowBtn}"
             Grid.Row="5"
             Grid.Column="0"
-            Width="150"
-            Height=" 50"
             VerticalAlignment="Top"
             HorizontalAlignment="Right"
             Margin="0 20 90 0"
-            FontSize="30"
             Content="login"
             Click="SwitchToLogin">
         </Button>

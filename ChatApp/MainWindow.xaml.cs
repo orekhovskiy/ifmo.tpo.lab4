@@ -27,12 +27,12 @@ namespace ChatApp
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
-        private void LogIn(object sender, RoutedEventArgs e)
+        private async void LogIn(object sender, RoutedEventArgs e)
         {
             var login = Login.Text;
             var password = Password.Password;
 
-            var loginResult = DataBaseService.GetUser(login, password);
+            var loginResult = await ServerService.GetUser(login, password);
             if (loginResult.Success)
             {
                 SwitchToChat(login);

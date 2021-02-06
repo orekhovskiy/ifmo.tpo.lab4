@@ -60,3 +60,17 @@ C:\Users\anton\source\repos\ChatApp\ChatApp\obj\Debug\netcoreapp3.1\Register.g.c
 C:\Users\anton\source\repos\ChatApp\ChatApp\obj\Debug\netcoreapp3.1\Register.baml
 C:\Users\anton\source\repos\ChatApp\ChatApp\obj\Debug\netcoreapp3.1\Chat.g.cs
 C:\Users\anton\source\repos\ChatApp\ChatApp\obj\Debug\netcoreapp3.1\Chat.baml
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\anton\source\repos\ChatApp\ChatApp\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\anton\source\repos\ChatApp\ChatApp\obj\Debug\netcoreapp3.1\Dictionary.baml

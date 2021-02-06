@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using ChatApp.Commons;
+using System.Text;
 
 namespace ChatApp.Models
 {
-    public partial class User
+    public class User
     {
         public User(string login, string password, string firstname, string lastname)
         {
             Login = login;
-            Password = Hasher.GetHash(password);
+            Password = Commons.Hasher.GetHash(password);
             Firstname = firstname;
             Lastname = lastname;
 

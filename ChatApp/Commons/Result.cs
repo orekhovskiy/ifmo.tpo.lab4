@@ -4,10 +4,12 @@ using System.Text;
 
 namespace ChatApp.Commons
 {
-    public struct Result
+    public class Result
     {
         public bool Success { get; }
         public object Value { get; }
+
+        public Result() { }
 
         public Result(bool success)
         {

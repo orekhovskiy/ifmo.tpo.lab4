@@ -52,18 +52,6 @@
           "lib/netstandard2.0/SeleniumExtras.PageObjects.dll": {}
         }
       },
-      "EntityFrameworkCore.Triggers/1.2.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/EntityFrameworkCore.Triggers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/EntityFrameworkCore.Triggers.dll": {}
-        }
-      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -2095,22 +2083,21 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "ChatApp/1.0.0": {
+      "Server/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "EntityFrameworkCore.Triggers": "1.2.2",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
         },
         "compile": {
-          "bin/placeholder/ChatApp.dll": {}
+          "bin/placeholder/Server.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ChatApp.dll": {}
+          "bin/placeholder/Server.dll": {}
         },
         "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
+          "Microsoft.AspNetCore.App"
         ]
       }
     }
@@ -2169,20 +2156,6 @@
         "lib/net40/SeleniumExtras.PageObjects.dll",
         "lib/net45/SeleniumExtras.PageObjects.dll",
         "lib/netstandard2.0/SeleniumExtras.PageObjects.dll"
-      ]
-    },
-    "EntityFrameworkCore.Triggers/1.2.2": {
-      "sha512": "d5aVzdfOHbYm+sgSiOC+GvgrX+XgfaUuvRtXrMqkoMFBwnwO+Zp9/8FAL27TWhDK67F/o3mIv1YarS9jClshNQ==",
-      "type": "package",
-      "path": "entityframeworkcore.triggers/1.2.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "entityframeworkcore.triggers.1.2.2.nupkg.sha512",
-        "entityframeworkcore.triggers.nuspec",
-        "lib/net461/EntityFrameworkCore.Triggers.dll",
-        "lib/netstandard2.0/EntityFrameworkCore.Triggers.dll",
-        "lib/netstandard2.1/EntityFrameworkCore.Triggers.dll"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -7350,18 +7323,18 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "ChatApp/1.0.0": {
+    "Server/1.0.0": {
       "type": "project",
-      "path": "../ChatApp/ChatApp.csproj",
-      "msbuildProject": "../ChatApp/ChatApp.csproj"
+      "path": "../Server/Server.csproj",
+      "msbuildProject": "../Server/Server.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Appium.WebDriver >= 4.2.1",
-      "ChatApp >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "NUnit3TestAdapter >= 3.15.1",
+      "Server >= 1.0.0",
       "nunit >= 3.12.0"
     ]
   },
@@ -7396,8 +7369,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj": {
-              "projectPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj"
+            "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj": {
+              "projectPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj"
             }
           }
         }
@@ -7439,11 +7412,11 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WPF": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"

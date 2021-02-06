@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6FUQnSM9aNETvpHLsF8QyOoEJoyrOSYroVnEFwwofZ0jvsfEYhVCThJZU/3Q8kDyWsZrYEI16MH8uzbAbg+F2w==",
+  "dgSpecHash": "5Ps0B+aNrz4AO4B4HeyCeLF/1uSAX8Y3a20yYK8GGSd5Po6jTvpYZaddqP4cTMP4uf+Rypt2D/GcvFRp4muhSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatAppTest\\ChatAppTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anton\\.nuget\\packages\\appium.webdriver\\4.2.1\\appium.webdriver.4.2.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\dotnetseleniumextras.pageobjects\\3.11.0\\dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512",
-    "C:\\Users\\anton\\.nuget\\packages\\entityframeworkcore.triggers\\1.2.2\\entityframeworkcore.triggers.1.2.2.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",

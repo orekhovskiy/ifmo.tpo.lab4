@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj": {
-                "projectPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj"
+              "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj": {
+                "projectPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj"
               }
             }
           }
@@ -74,25 +74,25 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj": {
+    "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj",
-        "projectName": "ChatApp",
-        "projectPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj",
+        "projectName": "Server",
+        "projectPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\ChatApp\\obj\\",
+        "outputPath": "C:\\Users\\anton\\source\\repos\\ChatApp\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -123,27 +123,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "EntityFrameworkCore.Triggers": {
-              "target": "Package",
-              "version": "[1.2.2, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.1.9, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.1.9, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.9, )"
             }
@@ -159,11 +143,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -32,14 +33,14 @@ namespace ChatApp
             this.Close();
         }
 
-        private void Signup(object sender, RoutedEventArgs e)
+        private async void Signup(object sender, RoutedEventArgs e)
         {
             var login = Login.Text;
             var password = Password.Password;
             var firstname = Firstname.Text;
             var lastname = Lastname.Text;
 
-            var signupResult = DataBaseService.AddUser(login, password, firstname, lastname);
+            var signupResult = await ServerService.AddUser(login, password, firstname, lastname);
             if (signupResult.Success)
             {
                 SwitchToChat(login);

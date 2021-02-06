@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ChatApp.Models
+namespace Server.Models
 {
     public partial class ChatContext : DbContext
     {

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+        Style="{StaticResource Window}"
+        Title="MainWindow">
     <Grid>
         <Grid.RowDefinitions>
         <RowDefinition></RowDefinition>
@@ -43,9 +44,7 @@
             <TextBox 
                 x:Name="Login"
                 AutomationProperties.AutomationId="MainWindowLoginTextBox"
-                FontSize="30"
-                Height="40"
-                Width="400"
+                Style="{StaticResource TextBox}"
                 VerticalAlignment="Center"/>
         </StackPanel>
 
@@ -63,9 +62,7 @@
             <PasswordBox 
                 x:Name="Password"
                 AutomationProperties.AutomationId="MainWindowPasswordPasswordBox"
-                FontSize="30"
-                Height="40"
-                Width="400"
+                Style="{StaticResource PasswordBox}"
                 VerticalAlignment="Center"/>
         </StackPanel>
             
@@ -74,28 +71,23 @@
 
         <Button 
             AutomationProperties.AutomationId="MainWindowLoginButton"
+            Style="{StaticResource ChangeWindowBtn}"
             Grid.Row="3"
             Grid.Column="1"
-            Width="150"
-            Height=" 50"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             Margin="90 20"
-            FontSize="30"
             Content="login"
-            Click="LogIn">
-        </Button>
+            Click="LogIn"/>
 
         <Button 
             AutomationProperties.AutomationId="MainWindowRegisterButton"
+            Style="{StaticResource ChangeWindowBtn}"
             Grid.Row="3"
             Grid.Column="0"
-            Width="150"
-            Height=" 50"
             VerticalAlignment="Top"
             HorizontalAlignment="Right"
             Margin="0 20 90 0"
-            FontSize="30"
             Content="register"
             Click="SwitchToRegister">
         </Button>

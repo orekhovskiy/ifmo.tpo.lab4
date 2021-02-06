@@ -1,23 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 using System.Text.RegularExpressions;
-using ChatApp.Commons;
-using ChatApp.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Server.Commons;
+using Server.Models;
 
-namespace ChatApp.Services
+namespace Server.Services
 {
-    public static class DataBaseService
+    public class DataBaseService : IDatabaseService
     {
-        private static ChatContext db = new ChatContext();
-        private static readonly  Regex regex = new Regex("[a-zA-Zа-яА-Я]+(([,. -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*");
+        private readonly Regex regex;
+        private readonly ChatContext db;
 
-        public static Result AddUser(string login, string password, string firstname, string lastname)
+        public DataBaseService(ChatContext context)
         {
+            db = context;
+            regex = new Regex("[a-zA-Zа-яА-Я]+(([,. -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*");
+        }
+
+        public Result AddUser(string login, string password, string firstname, string lastname)
+        {
+            login ??= "";
+            password ??= "";
+            firstname ??= "";
+            lastname ??= "";
             if (login.Length > 15) return new Result(false, Errors.LongLoginError());
             if (login.Length < 6) return new Result(false, Errors.ShortLoginError());
             if (!regex.IsMatch(login)) return new Result(false, Errors.InvalidLoginError());
@@ -49,10 +58,10 @@ namespace ChatApp.Services
                 var result = new Result(false, e.Message);
                 return result;
             }
-            
+
         }
 
-        public static Result DeleteUserById(int id)
+        public Result DeleteUserById(int id)
         {
             try
             {
@@ -66,8 +75,10 @@ namespace ChatApp.Services
             }
         }
 
-        public static Result GetUser(string login, string password)
+        public Result GetUser(string login, string password)
         {
+            login ??= "";
+            password ??= "";
             var user = db.User.FirstOrDefault(u => u.Login == login && u.Password == Hasher.GetHash(password));
             if (user == default)
             {
@@ -80,7 +91,7 @@ namespace ChatApp.Services
 
         }
 
-        public static Result UserExists(string login)
+        public Result UserExists(string login)
         {
             var user = db.User.FirstOrDefault(u => u.Login == login);
             if (user == default)
@@ -93,7 +104,7 @@ namespace ChatApp.Services
             }
         }
 
-        public static Result AddMessage(string content, string login)
+        public Result AddMessage(string content, string login)
         {
             if (!content.Any()) return new Result(false, Errors.EmptyMessageError());
             if (content.Length > 256) return new Result(false, Errors.LongMessageError());
@@ -106,14 +117,14 @@ namespace ChatApp.Services
                 var message = new Messages(content, login);
                 db.Messages.Add(message);
                 db.SaveChanges();
-                var sentMessage = db.Messages.Where(m => m.Login == login).ToList().Last().Id;
-                if (sentMessage == default)
+                var sentMessageId = db.Messages.Where(m => m.Login == login).ToList().Last().Id;
+                if (sentMessageId == default)
                 {
                     return new Result(true, "Couldn't get an id");
                 }
                 else
                 {
-                    return new Result(true, sentMessage);
+                    return new Result(true, sentMessageId);
                 }
             }
             catch (Exception e)
@@ -123,7 +134,7 @@ namespace ChatApp.Services
 
         }
 
-        public static Result DeleteMessage(int id)
+        public Result DeleteMessage(int id)
         {
             try
             {
@@ -137,17 +148,6 @@ namespace ChatApp.Services
             }
         }
 
-        public static Result GetAllMessages()
-        {
-            try
-            {
-                var massages = db.Messages.ToList();
-                return new Result(true, massages);
-            }
-            catch (Exception e)
-            {
-                return new Result(false, e.Message);
-            }
-        }
+        public List<Messages> GetAllMessages() => db.Messages.ToList();
     }
 }
